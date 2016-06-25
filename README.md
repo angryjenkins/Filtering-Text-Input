@@ -1,0 +1,3 @@
+# testing Word Search, ....
+
+I have used some RegEx tests to isolate words. The search function hides words that do not pass the test.
