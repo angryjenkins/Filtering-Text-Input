@@ -55,6 +55,7 @@ function wordGun(node){
 
 				$(this).removeClass('hidden'); 				// REVEAL TARGET WORD
 
+				// todo: make the individual letters bold as you type.
 
 				// this marks the completion of a typed word and
 				if($SearchField.val().toLowerCase() == targetWord.toLowerCase()){
