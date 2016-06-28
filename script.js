@@ -66,7 +66,7 @@ function wordGun(node){
 				
 				// DONE 9/27: make the individual letters bold as you type.
 
-				$(this).html("<b>" +  myInput + "</b>" + inputHighlight);
+				$(this).html("<em>" +  myInput + "</em>" + inputHighlight);
 
 				// this marks the completion of a typed word and
 				if($SearchField.val().toLowerCase() == targetWord.toLowerCase()){
