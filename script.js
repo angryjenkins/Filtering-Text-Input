@@ -69,7 +69,7 @@ function wordGun(node){
 				$(this).html("<em>" +  myInput + "</em>" + inputHighlight);
 
 				// this marks the completion of a typed word and
-				if($SearchField.val().toLowerCase() == targetWord.toLowerCase()){
+				if($SearchField.val() == targetWord){
 					alert("You typed " + targetWord);
 					$SearchField.val('');
 					$(this).closest('.wordTarget').remove();
