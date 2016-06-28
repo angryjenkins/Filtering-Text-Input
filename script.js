@@ -17,8 +17,8 @@ $(document).ready(function(){
 	});
 
 	// FITLERING!!!
-	$SearchField = $('#query');
-	$targets = $('.wordTarget');
+	$SearchField = $('#query');		// 	the text field. This is where the game is played.
+	$targets = $('.wordTarget');	//	the word targets. Each one will have the class "wordTarget."
 
 	// var debounced_tableFilter = _.debounce(wordGun, 200);
 	// var throttle_tableFilter = _.throttle(wordGun, 500);
@@ -29,6 +29,9 @@ $(document).ready(function(){
 
 function wordGun(node){
 	console.log('wordGun called');
+
+	var myInput = $SearchField.val();
+
 
 	console.log($SearchField.val());
 
@@ -55,15 +58,21 @@ function wordGun(node){
 
 				$(this).removeClass('hidden'); 				// REVEAL TARGET WORD
 
-				// todo: make the individual letters bold as you type.
+
+				var inputHighlight = targetWord.slice(inputSoFar);
+
+				console.log("Portion to highlight: ", inputHighlight);
+				console.log("My Input: ", myInput);
+				
+				// DONE 9/27: make the individual letters bold as you type.
+
+				$(this).html("<b>" +  myInput + "</b>" + inputHighlight);
 
 				// this marks the completion of a typed word and
 				if($SearchField.val().toLowerCase() == targetWord.toLowerCase()){
 					alert("You typed " + targetWord);
 					$SearchField.val('');
 					$(this).closest('.wordTarget').remove();
-
-
 				}
 
 			} else {
