@@ -1,22 +1,6 @@
-var $SearchField, $rows, $tables, $tabs;
+var $SearchField;
 
 $(document).ready(function(){
-
-	// MODALS
-	$('.fn-add-an-adtool-type-modal').click(function(e){
-		e.preventDefault();
-		$('#add-an-adtool-type-modal').modal('show');
-	});
-	$('.fn-add-an-adtool-type-cancel').click(function(e){
-		e.preventDefault();
-		//$('#add-an-adtool-type').removeClass('hidden').slideToggle();
-		$('#add-an-adtool-type-modal').modal('hide');
-	});
-	$('#add-an-adtool-type-modal').on('hidden.bs.modal', function() {
-		document.getElementById("add-an-adtool-type-modal-form").reset();
-	});
-
-	// FITLERING!!!
 	$SearchField = $('#query');		// 	the text field. This is where the game is played.
 	$targets = $('.wordTarget');	//	the word targets. Each one will have the class "wordTarget."
 
@@ -32,8 +16,7 @@ function wordGun(node){
 
 	var myInput = $SearchField.val();
 
-
-	console.log($SearchField.val());
+	console.log('myInput: ', myInput);
 
 	var val = '^(?=.*\\b' + $.trim($(node).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
         reg = RegExp(val, 'i'),
@@ -85,3 +68,8 @@ function wordGun(node){
 		console.log("%s Current Targets", targetCounter);
 	}
 };
+
+
+$('.noEnterSubmit').keypress(function(e){
+    if ( e.which == 13 ) return false;
+});
