@@ -59,7 +59,7 @@ function wordGun(node){
 				}
 
 			} else {
-				$(this).addClass('hidden');
+				// $(this).addClass('hidden');
 			}
 		});
 	}
